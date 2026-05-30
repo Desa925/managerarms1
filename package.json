@@ -1,0 +1,17 @@
+{
+  "name": "managerarms",
+  "version": "1.0.0",
+  "description": "Sistema de controle de documentos e vencimentos",
+  "keywords": [
+    "controle",
+    "documentos",
+    "alertas"
+  ],
+  "license": "ISC",
+  "author": "José Luiz de Sá Silva",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

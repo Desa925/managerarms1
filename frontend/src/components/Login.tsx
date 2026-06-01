@@ -9,29 +9,13 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
 
-  const handleLogin = async () => {
-    try {
-      const response = await fetch("https://managerarms-backend.onrender.com/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          usuario,
-          senha,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setErro("");
-        onLogin();
-      } else {
-        setErro(data.message || "Usuário ou senha inválidos");
-      }
-    } catch (error) {
-      setErro("Erro ao conectar com o servidor");
+  // 🔹 Login fixo para WR
+  const handleLogin = () => {
+    if (usuario === "WR" && senha === "wr2026") {
+      setErro("");
+      onLogin();
+    } else {
+      setErro("Usuário ou senha inválidos");
     }
   };
 
@@ -70,7 +54,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <label style={{ fontWeight: "bold", fontSize: "16px" }}>
             Usuário
           </label>
-
           <input
             type="text"
             value={usuario}
@@ -92,7 +75,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           <label style={{ fontWeight: "bold", fontSize: "16px" }}>
             Senha
           </label>
-
           <input
             type="password"
             value={senha}

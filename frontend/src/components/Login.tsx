@@ -10,7 +10,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [erro, setErro] = useState("");
 
   const handleLogin = () => {
-    if (usuario === "WR" && senha === "jose@020957") {
+    if (usuario === "jose" && senha === "desa@020957") {
       setErro("");
       onLogin();
     } else {
